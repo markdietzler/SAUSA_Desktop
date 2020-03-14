@@ -34,14 +34,30 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.112.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -52,56 +68,54 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.112.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.112.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.19\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Containers\Box.cs" />
-    <Compile Include="Containers\Can.cs" />
-    <Compile Include="Containers\Container.cs" />
-    <Compile Include="Containers\Container_Factory.cs" />
-    <Compile Include="Containers\Crate.cs" />
-    <Compile Include="Containers\Drum.cs" />
-    <Compile Include="DataProcessing\GetThemes.cs" />
+    <Compile Include="DataProcessing\GetEnums.cs" />
+    <Compile Include="Defaults\DBFieldEnum.cs" />
     <Compile Include="Defaults\FilePathDefaults.cs" />
     <Compile Include="Defaults\ThemeEnums.cs" />
     <Compile Include="Defaults\XMLDataDefaults.cs" />
-    <Compile Include="export\ExportAdapter.cs" />
-    <Compile Include="export\ToBMP.cs" />
-    <Compile Include="export\ToCSV.cs" />
     <Compile Include="export\ToDatabase.cs" />
-    <Compile Include="export\ToIMG.cs" />
-    <Compile Include="export\ToPDF.cs" />
-    <Compile Include="export\ToTablet.cs" />
     <Compile Include="FileHandling\Compression\FileCompressionUtils.cs" />
-    <Compile Include="FileHandling\Database\Reading\ReadMSSQL.cs" />
-    <Compile Include="FileHandling\Database\Reading\ReadMYSQL.cs" />
+    <Compile Include="FileHandling\Database\Reading\ReadExternlDB.cs" />
     <Compile Include="FileHandling\Database\Reading\ReadSQLite.cs" />
-    <Compile Include="FileHandling\Database\Writing\WriteMSSQL.cs" />
-    <Compile Include="FileHandling\Database\Writing\WriteMySQL.cs" />
+    <Compile Include="FileHandling\Database\Writing\WriteExternalDB.cs" />
     <Compile Include="FileHandling\Database\Writing\WriteSQLite.cs" />
+    <Compile Include="FileHandling\Text\Reading\ReadText.cs" />
+    <Compile Include="FileHandling\Text\Writing\WriteText.cs" />
     <Compile Include="FileHandling\XML\Reading\ReadXML.cs" />
     <Compile Include="FileHandling\XML\Writing\WriteXML.cs" />
-    <Compile Include="import\FromCSV.cs" />
     <Compile Include="import\FromDatabase.cs" />
-    <Compile Include="import\FromTablet.cs" />
-    <Compile Include="import\ImportAdapter.cs" />
     <Compile Include="Init\NewProjectInit.cs" />
-    <Compile Include="Init\ViewController.cs" />
-    <Compile Include="Models\DatabaseModel.cs" />
+    <Compile Include="Models\Database\IndividualDatabaseFieldModel.cs" />
+    <Compile Include="Models\ExternalDBModel.cs" />
+    <Compile Include="Models\FullStackModel.cs" />
     <Compile Include="Models\LastProjectModel.cs" />
     <Compile Include="Models\MiniStackModel.cs" />
+    <Compile Include="Models\ProjectDBFieldModel.cs" />
     <Compile Include="Models\ProjectSQLiteDatabase.cs" />
     <Compile Include="Models\ProjectStorage.cs" />
     <Compile Include="Models\SettingsModel.cs" />
     <Compile Include="Models\SQLiteDatabaseModel.cs" />
     <Compile Include="Models\StackModel.cs" />
     <Compile Include="Models\ThemeModel.cs" />
+    <Compile Include="Models\Theme\ThemeModel.cs" />
+    <Compile Include="Models\VisibilityConverter.cs" />
+    <Compile Include="Models\XML\SettingsXMLModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

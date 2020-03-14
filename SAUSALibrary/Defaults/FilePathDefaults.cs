@@ -11,7 +11,7 @@ namespace SAUSALibrary.Defaults
         {
             get
             {
-                return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Sausa";
+                return Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\Sausa\";
                 //on my dev machine, this maps to C:\Users\Diesel\AppData\Roaming\Sausa\
             }
         }
@@ -20,7 +20,7 @@ namespace SAUSALibrary.Defaults
         {
             get
             {
-                return Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\Sausa";
+                return Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\Sausa\";
                 //on my dev machine, this maps to C:\ProgramData\Sausa\
             }
         }
@@ -29,7 +29,7 @@ namespace SAUSALibrary.Defaults
         {
             get
             {
-                return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Sausa";
+                return Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Sausa\";
                 //on my dev machine, this maps to C:\Users\Diesel\Documents\Sausa\
             }
         }
@@ -38,7 +38,7 @@ namespace SAUSALibrary.Defaults
         {
             get
             {
-                return Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\Sausa\Settings.xml";
+                return Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + @"\Sausa\";
                 //on my dev machine, this maps to C:\ProgramData\Sausa\Settings.xml
             }
         }
